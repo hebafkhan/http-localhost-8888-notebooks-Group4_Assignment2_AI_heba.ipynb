@@ -3,8 +3,8 @@
 
 # In[5]:
 
+# Predict the outliers using supervised and unsupervised models
 
-# Assignment2 Predict the outliers
 # Import necessary libraries for data manipulation and machine learning
 
 import pandas as pd  # Importing pandas for data handling and analysis
@@ -36,25 +36,7 @@ import os  # Importing os module for operating system functionalities (like file
 import zipfile
 
 
-# In[6]:
-
-
-# Summary Table
-summary_table = pd.DataFrame({
-    'Model': ['Isolation Forest', 'One Class SVM', 'Local Outlier Factor', 'DBSCAN'],
-    'Task': ['F1 Score Calculated', 'F1 Score Calculated', 'F1 Score Calculated', 'F1 Score Calculated'],
-    'Confusion Matrix Built': ['Yes', 'Yes', 'Yes', 'Yes'],
-    'Issues': ['', '', '', ''],
-    'Train Time': ['', '', '', ''],
-    'Training F1': ['', '', '', ''],
-    'Test F1': ['', '', '', '']
-})
-
-print(summary_table)
-
-
 # In[7]:
-
 
 # Load the data
 
@@ -70,7 +52,6 @@ csv_file_path = os.path.join(extract_dir, csv_file_name)
 
 
 # In[8]:
-
 
 # We are randomly sample data since the dataset is too large
 # We are sampling to save execution time and memory.
@@ -100,7 +81,6 @@ X_test_scaled = scaler.transform(X_test)
 
 # In[9]:
 
-
 # Function to calculate F1 score and confusion matrix
 def evaluate_model(y_true, y_pred):
     f1 = f1_score(y_true, y_pred)
@@ -129,7 +109,6 @@ results = {
 
 
 # In[10]:
-
 
 # Isolation Forest
 print("Running Isolation Forest")
